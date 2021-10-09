@@ -1,7 +1,7 @@
 <script>
-import { DasAvatar, DasAccountCard } from '../dist/das-ui-shared.es'
-import '../dist/style.css'
-// import { DasAvatar, DasAccountCard } from './index'
+// import { DasAvatar, DasAccountCard } from '../dist/das-ui-shared.es'
+// import '../dist/style.css'
+import { DasAvatar, DasAccountCard } from './index'
 
 export default {
   components: {
@@ -37,7 +37,7 @@ export default {
 
   .das-account-card {
     flex: 1;
-    height: 200px;
+    height: 333px;
   }
 }
 </style>

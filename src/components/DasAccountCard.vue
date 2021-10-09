@@ -93,7 +93,7 @@ export default {
     this.contentHeight = Math.min(maxHeight, maxWidth * 0.8)
     this.contentWidth = Math.min(maxWidth, maxHeight * 1.25)
     this.avatarSize = this.contentWidth * 0.2
-    this.maxFontSize = this.contentWidth * 0.1
+    this.maxFontSize = this.contentWidth * 0.14
     this.minFontSize = Math.max(12, this.maxFontSize * 0.5)
     this.activated = true
   }
