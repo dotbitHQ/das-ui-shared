@@ -1,0 +1,35 @@
+{
+  "name": "das-ui-shared",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/das-ui-shared.umd.js",
+  "module": "./dist/das-ui-shared.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/das-ui-shared.es.js",
+      "requirenhe": "./dist/das-ui-shared.umd.js"
+    }
+  },
+  "dependencies": {
+    "@vue/composition-api": "^1.2.2"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.14"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.1",
+    "sass": "^1.42.1",
+    "typescript": "^4.4.3",
+    "vite": "^2.5.10",
+    "vite-plugin-vue2": "^1.8.2",
+    "vue-template-compiler": "^2.6.14",
+    "vue-tsc": "^0.3.0"
+  }
+}
