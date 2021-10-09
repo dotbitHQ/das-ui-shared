@@ -3,11 +3,13 @@
   "version": "0.0.2",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vue-tsc --noEmit && vite build && tsc --emitDeclarationOnly",
     "serve": "vite preview"
   },
+  "types": "./types/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
   "main": "./dist/das-ui-shared.umd.js",
   "module": "./dist/das-ui-shared.es.js",

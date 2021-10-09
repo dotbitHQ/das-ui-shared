@@ -7,6 +7,8 @@
     "strict": true,
     "jsx": "preserve",
     "sourceMap": true,
+    "declaration": true,
+    "declarationDir": "./types",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
@@ -21,5 +23,5 @@
     }
   },
 
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "*.ts"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
