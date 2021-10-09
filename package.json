@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build && tsc --emitDeclarationOnly",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "prepublishOnly": "npm run build"
   },
   "types": "./types/index.d.ts",
   "files": [
