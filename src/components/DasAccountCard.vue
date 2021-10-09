@@ -9,15 +9,14 @@ $avatarSize: 60px;
   justify-content: center;
   font-family: sans-serif;
 
-  .das_card {
+  .account_card {
     position: relative;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding: 3%;
     background: url('../imgs/das-card-bg.svg') no-repeat center bottom/contain;
 
     &._narrow {
@@ -26,7 +25,7 @@ $avatarSize: 60px;
     }
   }
 
-  .das_name {
+  .account_name {
     font-size: 44px;
     font-weight: bold;
     text-align: center;
@@ -34,7 +33,7 @@ $avatarSize: 60px;
     color: #fff;
   }
 
-  .das_suffix {
+  .account_suffix {
     padding: 0 20px 4px 20px;
     display: flex;
     align-items: center;
@@ -102,10 +101,10 @@ export default {
 
 <template>
   <div class="das-account-card" :style="{backgroundColor: color.color}">
-    <div class="das_card" :class="isNarrow ? '_narrow': ''" :style="{height: `${contentHeight}px`, width: `${contentWidth}px`}">
-      <DasAvatar class="das_avatar" :account="account" :size="avatarSize" />
-      <div v-if="activated" class="das_name" v-resize-text="{minSize: minFontSize, maxSize: maxFontSize}">{{ account.replace('.bit', '') }}</div>
-      <div class="das_suffix" :style="{'font-size': `${maxFontSize}px`}">.bit</div>
+    <div class="account_card" :class="isNarrow ? '_narrow': ''" :style="{height: `${contentHeight}px`, width: `${contentWidth}px`}">
+      <DasAvatar class="account_avatar" :account="account" :size="avatarSize" />
+      <div v-if="activated" class="account_name" v-resize-text="{minSize: minFontSize, maxSize: maxFontSize}">{{ account.replace('.bit', '') }}</div>
+      <div class="account_suffix" :style="{'font-size': `${maxFontSize}px`}">.bit</div>
     </div>
   </div>
 </template>
