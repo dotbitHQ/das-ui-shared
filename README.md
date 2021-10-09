@@ -2,6 +2,11 @@
 
 Shared UI components and functions among DAS ecosystems.
 
+## Install
+```shell
+npm install das-ui-shared --save
+```
+
 ## UI Components
 You should import css file before using UI components.
 ```typescript
