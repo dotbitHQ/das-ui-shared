@@ -17,7 +17,7 @@
   "exports": {
     ".": {
       "import": "./dist/das-ui-shared.es.js",
-      "requirenhe": "./dist/das-ui-shared.umd.js"
+      "require": "./dist/das-ui-shared.umd.js"
     }
   },
   "dependencies": {
