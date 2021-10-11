@@ -3,7 +3,7 @@
   "version": "0.0.7",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build && tsc --emitDeclarationOnly",
+    "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
     "prepublishOnly": "npm run build"
   },
@@ -21,7 +21,6 @@
     }
   },
   "dependencies": {
-    "@vue/composition-api": "^1.2.2"
   },
   "peerDependencies": {
     "vue": "^2.6.14"
