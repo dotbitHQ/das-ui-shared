@@ -5,11 +5,26 @@ $avatarSize: 60px;
 
 .das-account-card {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: sans-serif;
 
+  .das-account-card_body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+  }
+
+  // here we use a div as shadow instead of box-shadow to allow html2canvas to work properly.
+  .das-account-card_shadow {
+    position: absolute;
+    top: 6%;
+    left: -6%;
+    width: 100%;
+    height: 100%;
+  }
+  
   .das-account-card_content {
     position: relative;
     box-sizing: border-box;
@@ -25,16 +40,6 @@ $avatarSize: 60px;
       padding-left: 5px;
       padding-right: 5px;
     }
-  }
-
-  // here we use a div as shadow instead of box-shadow to allow html2canvas to work properly.
-  .das-account-card_shadow {
-    position: absolute;
-    z-index: -1;
-    top: 6%;
-    left: -6%;
-    width: 100%;
-    height: 100%;
   }
 
   .das-account-card_avatar {
@@ -123,13 +128,15 @@ export default {
 </script>
 
 <template>
-  <div class="das-account-card" :style="{backgroundColor: color.color, borderRadius: `${radius}px`}">
-    <div v-if="shadow" class="das-account-card_shadow" :style="{background: color.light, borderRadius: `${radius}px`}" />
+  <div class="das-account-card">
+    <div v-if="shadow" class="das-account-card_shadow" :style="{backgroundColor: color.light, borderRadius: `${radius}px`}" />
 
-    <div class="das-account-card_content" :class="isNarrow ? '_narrow': ''" :style="{height: `${contentHeight}px`, width: `${contentWidth}px`}">
-      <DasAvatar class="das-account-card_avatar" :account="account" :size="avatarSize" />
-      <div v-if="activated" class="das-account-card_name" v-resize-text="{minSize: minFontSize, maxSize: maxFontSize}">{{ account.replace('.bit', '') }}</div>
-      <div class="das-account-card_suffix" :style="{'font-size': `${maxFontSize}px`}">.bit</div>
+    <div class="das-account-card_body" :style="{backgroundColor: color.color, borderRadius: `${radius}px`}">
+      <div class="das-account-card_content" :class="isNarrow ? '_narrow': ''" :style="{height: `${contentHeight}px`, width: `${contentWidth}px`}">
+        <DasAvatar class="das-account-card_avatar" :account="account" :size="avatarSize" />
+        <div v-if="activated" class="das-account-card_name" v-resize-text="{minSize: minFontSize, maxSize: maxFontSize}">{{ account.replace('.bit', '') }}</div>
+        <div class="das-account-card_suffix" :style="{'font-size': `${maxFontSize}px`}">.bit</div>
+      </div>
     </div>
   </div>
 </template>

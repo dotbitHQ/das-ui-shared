@@ -17,9 +17,9 @@ export default {
     <div style="display: flex;justify-content: space-between;">
       <DasAccountCard style="height: 200px" shadow round account="thefirst💯registeredbydevteamtoensuredassuccessfullylaunched18.bit"></DasAccountCard>
       <DasAccountCard style="height: 200px" shadow account="💯💯💯💯🐳😊🐳😊🐳😊🐳😊🐳😊💯💯💯💯🐳😊🐳😊🐳😊🐳😊🐳😊.bit"></DasAccountCard>
-      <DasAccountCard style="height: 200px" account="dastodamoon.bit"></DasAccountCard>
-      <DasAccountCard style="height: 200px" account="alice.bit"></DasAccountCard>
-      <DasAccountCard style="height: 200px" account="a.bit"></DasAccountCard>
+      <DasAccountCard style="height: 200px" shadow account="dastodamoon.bit"></DasAccountCard>
+      <DasAccountCard style="height: 200px" shadow account="alice.bit"></DasAccountCard>
+      <DasAccountCard style="height: 200px" shadow account="a.bit"></DasAccountCard>
     </div>
 
     <div style="display: flex;justify-content: space-between;">
