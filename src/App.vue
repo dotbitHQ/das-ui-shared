@@ -15,13 +15,27 @@ export default {
   <div class="app">
     <DasAvatar account="dastodamoon.bit" size="50" ></DasAvatar>
     <div style="display: flex;justify-content: space-between;">
-      <DasAccountCard account="thefirst💯registeredbydevteamtoensuredassuccessfullylaunched18.bit"></DasAccountCard>
-      <DasAccountCard account="💯💯💯💯🐳😊🐳😊🐳😊🐳😊🐳😊💯💯💯💯🐳😊🐳😊🐳😊🐳😊🐳😊.bit"></DasAccountCard>
-      <DasAccountCard account="dastodamoon.bit"></DasAccountCard>
+      <DasAccountCard style="height: 200px" shadow round account="thefirst💯registeredbydevteamtoensuredassuccessfullylaunched18.bit"></DasAccountCard>
+      <DasAccountCard style="height: 200px" shadow account="💯💯💯💯🐳😊🐳😊🐳😊🐳😊🐳😊💯💯💯💯🐳😊🐳😊🐳😊🐳😊🐳😊.bit"></DasAccountCard>
+      <DasAccountCard style="height: 200px" account="dastodamoon.bit"></DasAccountCard>
+      <DasAccountCard style="height: 200px" account="alice.bit"></DasAccountCard>
+      <DasAccountCard style="height: 200px" account="a.bit"></DasAccountCard>
+    </div>
+
+    <div style="display: flex;justify-content: space-between;">
+      <DasAccountCard style="height: 300px" shadow round account="thefirst💯registeredbydevteamtoensuredassuccessfullylaunched18.bit"></DasAccountCard>
+      <DasAccountCard style="height: 300px" account="💯💯💯💯🐳😊🐳😊🐳😊🐳😊🐳😊💯💯💯💯🐳😊🐳😊🐳😊🐳😊🐳😊.bit"></DasAccountCard>
+      <DasAccountCard style="height: 300px" account="dastodamoon.bit"></DasAccountCard>
+      <DasAccountCard style="height: 300px" account="alice.bit"></DasAccountCard>
     </div>
     <div style="display: flex;justify-content: space-between;">
-      <DasAccountCard account="thefirst💯registeredbydevteamtoensuredassuccessfullylaunched18.bit"></DasAccountCard>
-      <DasAccountCard account="💯💯💯💯🐳😊🐳😊🐳😊🐳😊🐳😊💯💯💯💯🐳😊🐳😊🐳😊🐳😊🐳😊.bit"></DasAccountCard>
+      <DasAccountCard shadow round account="thefirst💯registeredbydevteamtoensuredassuccessfullylaunched18.bit" style="height: 400px"></DasAccountCard>
+      <DasAccountCard account="💯💯💯💯🐳😊🐳😊🐳😊🐳😊🐳😊💯💯💯💯🐳😊🐳😊🐳😊🐳😊🐳😊.bit" style="height: 400px"></DasAccountCard>
+      <DasAccountCard account="dastodamoon.bit" style="height: 400px"></DasAccountCard>
+    </div>
+    <div style="display: flex;justify-content: space-between;">
+      <DasAccountCard shadow round account="thefirst💯registeredbydevteamtoensuredassuccessfullylaunched18.bit" style="height: 500px"></DasAccountCard>
+      <DasAccountCard account="💯💯💯💯🐳😊🐳😊🐳😊🐳😊🐳😊💯💯💯💯🐳😊🐳😊🐳😊🐳😊🐳😊.bit" style="height: 800px"></DasAccountCard>
     </div>
   </div>
 </template>
@@ -38,6 +52,7 @@ export default {
   .das-account-card {
     flex: 1;
     height: 333px;
+    margin: 2%;
   }
 }
 </style>

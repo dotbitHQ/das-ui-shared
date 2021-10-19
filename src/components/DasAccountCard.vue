@@ -4,6 +4,7 @@
 $avatarSize: 60px;
 
 .das-account-card {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,12 +18,27 @@ $avatarSize: 60px;
     align-items: center;
     justify-content: space-around;
     padding: 3%;
+    margin-bottom: 2%;
     background: url('../imgs/das-card-bg.svg') no-repeat center bottom/contain;
 
     &._narrow {
       padding-left: 5px;
       padding-right: 5px;
     }
+  }
+
+  // here we use a div as shadow instead of box-shadow to allow html2canvas to work properly.
+  .das-account-card_shadow {
+    position: absolute;
+    z-index: -1;
+    top: 6%;
+    left: -6%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .das-account-card_avatar {
+    margin-top: -5%;
   }
 
   .das-account-card_name {
@@ -64,7 +80,9 @@ export default {
     account: {
       type: String,
       default: ''
-    }
+    },
+    shadow: Boolean,
+    round: Boolean,
   },
   data () {
     const color = accountColor(this.account)
@@ -79,6 +97,7 @@ export default {
       avatarSize: 0,
       maxFontSize: 0,
       minFontSize: 0,
+      radius: 0,
       activated: false,
     }
   },
@@ -89,18 +108,24 @@ export default {
     const maxHeight = cardHeight * 0.9
     const maxWidth = cardWidth * 0.9
 
-    this.contentHeight = Math.min(maxHeight, maxWidth * 0.8)
-    this.contentWidth = Math.min(maxWidth, maxHeight * 1.25)
+    this.contentHeight = Math.min(maxHeight, maxWidth * 0.75)
+    this.contentWidth = Math.min(maxWidth, maxHeight * 1.33)
     this.avatarSize = this.contentWidth * 0.2
     this.maxFontSize = this.contentWidth * 0.14
     this.minFontSize = Math.max(12, this.maxFontSize * 0.5)
+
+    if (this.round) {
+      this.radius = this.contentWidth * 0.08
+    }
     this.activated = true
   }
 }
 </script>
 
 <template>
-  <div class="das-account-card" :style="{backgroundColor: color.color}">
+  <div class="das-account-card" :style="{backgroundColor: color.color, borderRadius: `${radius}px`}">
+    <div v-if="shadow" class="das-account-card_shadow" :style="{background: color.light, borderRadius: `${radius}px`}" />
+
     <div class="das-account-card_content" :class="isNarrow ? '_narrow': ''" :style="{height: `${contentHeight}px`, width: `${contentWidth}px`}">
       <DasAvatar class="das-account-card_avatar" :account="account" :size="avatarSize" />
       <div v-if="activated" class="das-account-card_name" v-resize-text="{minSize: minFontSize, maxSize: maxFontSize}">{{ account.replace('.bit', '') }}</div>
