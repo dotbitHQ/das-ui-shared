@@ -1,6 +1,11 @@
 {
   "name": "das-ui-shared",
   "version": "0.1.0",
+  "homepage": "https://github.com/DeAccountSystems/das-ui-shared",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DeAccountSystems/das-ui-shared.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
