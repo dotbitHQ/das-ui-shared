@@ -52,6 +52,10 @@ $avatarSize: 60px;
     text-align: center;
     line-height: 1;
     color: #fff;
+
+    &._light {
+      font-weight: unset;
+    }
   }
 
   .das-account-card_suffix {
@@ -104,6 +108,8 @@ export default {
       minFontSize: 0,
       radius: 0,
       activated: false,
+
+      lightName: false,
     }
   },
   mounted () {
@@ -123,6 +129,21 @@ export default {
       this.radius = this.contentWidth * 0.08
     }
     this.activated = true
+
+    // fixed the rendering problem introduced in chrome 96 on windows
+    // nextTick is to not break the main thread if anything happens, as it is not fully test
+    // https://support.google.com/chrome/thread/136127348/chrome-bold-weight-emoji-broken-version-93-0-4664-45?hl=en
+    this.$nextTick(() => {
+      const ua = window?.navigator.userAgent
+      if (ua && ua.match(/windows/ig) && ua.match(/chrome/ig)) {
+        if (this.account.match(/(\ud83c[\udf00-\udfff])|(\ud83d[\udc00-\ude4f\ude80-\udeff])|[\u2600-\u2B55]/ig)) {
+          const version = Number(ua.match(/chrome\/(\d+)/i)[1])
+          if (version === 96) {
+            this.lightName = true
+          }
+        }
+      }
+    })
   }
 }
 </script>
@@ -134,7 +155,7 @@ export default {
     <div class="das-account-card_body" :style="{backgroundColor: color.color, borderRadius: `${radius}px`}">
       <div class="das-account-card_content" :class="isNarrow ? '_narrow': ''" :style="{height: `${contentHeight}px`, width: `${contentWidth}px`}">
         <DasAvatar class="das-account-card_avatar" :account="account" :size="avatarSize" />
-        <div v-if="activated" class="das-account-card_name" v-resize-text="{minSize: minFontSize, maxSize: maxFontSize}">{{ account.replace('.bit', '') }}</div>
+        <div v-if="activated" class="das-account-card_name" :class="{_light: lightName}" v-resize-text="{minSize: minFontSize, maxSize: maxFontSize}">{{ label }}</div>
         <div class="das-account-card_suffix" :style="{'font-size': `${maxFontSize}px`}">.bit</div>
       </div>
     </div>
