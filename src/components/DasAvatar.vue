@@ -34,7 +34,7 @@ export default {
   },
   data() {
     return {
-      identicon: `https://identicons.da.systems/identicon/${this.account}`
+      identicon: `https://identicons.did.id/identicon/${this.account}`
     }
   },
 }
