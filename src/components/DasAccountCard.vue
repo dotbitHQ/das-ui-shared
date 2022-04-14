@@ -76,6 +76,7 @@ $avatarSize: 60px;
 import DasAvatar from './DasAvatar.vue'
 import ResizeText from '../directives/ResizeText'
 import { accountColor } from '~/tools/color'
+import { toHashedStyle } from '~/tools/account'
 
 export default {
   name: 'DasAccountCard',
@@ -96,9 +97,11 @@ export default {
   data () {
     const color = accountColor(this.account)
 
+    const hashedAccount = toHashedStyle(this.account)
+
     return {
       color,
-      label: this.account.replace(/\.bit$/, ''),
+      label: hashedAccount.replace(/\.bit$/, ''),
       isNarrow: false,
 
       contentHeight: 0,
